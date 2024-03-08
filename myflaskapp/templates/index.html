@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - My Portfolio{% endblock %}
+
+{% block content %}
+<section id="register">
+    <h2>Register</h2>
+    <form method="post" action="{{ url_for('register') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Email  ID :</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Register">
+        
+    </form>
+</section>
+
+<section class="news-section">
+    <h2>Latest Cybersecurity Insights from TheHackersNews</h2>
+    <ul>
+        {% for item in news_items %}
+            <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+
+
+{% endblock %}
