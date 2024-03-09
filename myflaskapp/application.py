@@ -7,11 +7,11 @@ from logging.handlers import RotatingFileHandler
 
 
 application = Flask(__name__)
-application.config['SECRET_KEY'] = 'canyougetmeajob@4436318663'
+application.config['SECRET_KEY'] = 3'
 
 
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:rajatbisht@flaskdatabase.c7wqgg8maypt.us-east-1.rds.amazonaws.com/flaskapp'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://USERNAME:PASSWORDt@DATABASE'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(application)
