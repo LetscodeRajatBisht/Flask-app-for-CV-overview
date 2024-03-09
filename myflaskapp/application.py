@@ -9,11 +9,6 @@ from logging.handlers import RotatingFileHandler
 application = Flask(__name__)
 application.config['SECRET_KEY'] = 'canyougetmeajob@4436318663'
 
-application.logger.setLevel(logging.INFO)  # Adjust as needed
-log_handler = RotatingFileHandler('application.log', maxBytes=100000, backupCount=3)
-log_formatter = logging.Formatter('[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
-log_handler.setFormatter(log_formatter)
-application.logger.addHandler(log_handler)
 
 
 application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:rajatbisht@flaskdatabase.c7wqgg8maypt.us-east-1.rds.amazonaws.com/flaskapp'
@@ -75,12 +70,10 @@ def register():
             new_user = users(name=username, email=email, password=password)
             db.session.add(new_user)
             db.session.commit()
-            application.logger.info(f"User registered: {username}")
             session['registered'] = True
             flash('Registration successful!', 'success')
             return redirect(url_for('about'))
         except Exception as e:
-            application.logger.error(f"Registration failed for {username}: {e}")
             db.session.rollback()
             flash('Registration failed. Please try again later.', 'danger')
 
