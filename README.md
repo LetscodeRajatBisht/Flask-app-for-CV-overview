@@ -1,0 +1,1 @@
+# In this flask-based app, I added a user registration page linked to MySQL, session management was established, RSS feeds from TheHackerNews were displayed and my CV overview. It was later hosted in AWS using Elastic Beanstalk and Code pipeline.
