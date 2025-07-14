@@ -16,7 +16,7 @@ MarkupSafe==2.1.5
 mysql-connector-python==8.3.0
 mysqlclient==2.2.4
 PyYAML==6.0.1
-requests==2.31.0
+requests==2.32.4
 sgmllib3k==1.0.0
 SQLAlchemy==2.0.28
 typing-extensions==4.10.0
